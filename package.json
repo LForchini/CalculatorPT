@@ -1,0 +1,19 @@
+{
+  "name": "calculatorpt",
+  "version": "1.0.0",
+  "description": "A calculator project for the apprentices at Playtech",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LForchini/CalculatorPT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LForchini/CalculatorPT/issues"
+  },
+  "homepage": "https://github.com/LForchini/CalculatorPT#readme"
+}
