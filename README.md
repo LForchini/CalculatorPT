@@ -41,11 +41,14 @@ By: Bev, Bence, Jeric, Brook, and Leo
 This project is React.js based, and includes TailwindCSS, however these are both downloaded during the installation below.
 `npm` is required for the installation procedure, and is acquired by downloading NodeJS from either the Software Center or the [NodeJS Website](https://nodejs.org).
 
+### Setting up
 1. Download the repository by executing `git clone git@github.com:LForchini/CalculatorPT.git`.
    If that doesn't work, try downloading it using https with `git clone https://github.com/LForchini/CalculatorPT.git`.
 1. Move into the directory using `cd CalculatorPT`.
 1. Install project requirements using `npm i`.
    This will automatically download all of the dependencies and devDependencies to compatible versions.
+   
+### Accessing the website
 * `npm start` will run a test development server which will run on `localhost:3000`. 
    This should open automatically in your default browser.
 * `npm run build` will build an optimised production version of the website, which can be found in the generated `build` directory.
