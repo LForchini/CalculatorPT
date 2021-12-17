@@ -38,15 +38,16 @@ By: Bev, Bence, Jeric, Brook, and Leo
 
 ### Requirements
 
-This project depends on `react`, `react-scripts`, and `tailwindcss`.
-These are downloaded during the installation procedure.
-VSCode is especially useful for `tailwindcss` due to the Tailwind extension.
-Both `npm` and `node` are required also.
-Download these in the Software Center or on the [NodeJS website](https://nodejs.org).
+This project is React.js based, and includes TailwindCSS, however these are both downloaded during the installation below.
+`npm` is required for the installation procedure, and is acquired by downloading NodeJS from either the Software Center or the [NodeJS Website](https://nodejs.org).
 
-1. `git clone git@github.com:LForchini/CalculatorPT.git` to download this repository.
-   If that doesn't work, try `git clone https://github.com/LForchini/CalculatorPT.git`.
-1. `cd CalculatorPT` to move into the folder.
-1. `npm i` to install node modules.
-1. `npm start` to run dev server.
-1. `npm run build` to build production server.
+1. Download the repository by executing `git clone git@github.com:LForchini/CalculatorPT.git`.
+   If that doesn't work, try downloading it using https with `git clone https://github.com/LForchini/CalculatorPT.git`.
+1. Move into the directory using `cd CalculatorPT`.
+1. Install project requirements using `npm i`.
+   This will automatically download all of the dependencies and devDependencies to compatible versions.
+* `npm start` will run a test development server which will run on `localhost:3000`. 
+   This should open automatically in your default browser.
+* `npm run build` will build an optimised production version of the website, which can be found in the generated `build` directory.
+* We also have a GitHub Page hosting this website which can be accessed [here](https://LForchini.github.io/CalculatorPT).
+   This is updated with every push to main.
