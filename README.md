@@ -1,5 +1,10 @@
 # Calculator App
 
+This is a project made by the apprentices at Playtech given to us by our manager.
+It's meant to a be a quick practice project.
+
+By: Bev, Bence, Jeric, Brook, and Leo
+
 ## Requirements
 
 ### Need to have
@@ -27,3 +32,21 @@
 1. Test things
 1. User can select constants to include in the expression.
 1. The result of the previous expression is stored (maybe in ans variable, maybe implied)
+1. User can insert digits in the middle of numbers.
+
+## Installation
+
+### Requirements
+
+This project depends on `react`, `react-scripts`, and `tailwindcss`.
+These are downloaded during the installation procedure.
+VSCode is especially useful for `tailwindcss` due to the Tailwind extension.
+Both `npm` and `node` are required also.
+Download these in the Software Center or on the [NodeJS website](https://nodejs.org).
+
+1. `git clone git@github.com:LForchini/CalculatorPT.git` to download this repository.
+   If that doesn't work, try `git clone https://github.com/LForchini/CalculatorPT.git`.
+1. `cd CalculatorPT` to move into the folder.
+1. `npm i` to install node modules.
+1. `npm start` to run dev server.
+1. `npm run build` to build production server.
