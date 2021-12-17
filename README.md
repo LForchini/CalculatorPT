@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Calculator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a project made by the apprentices at Playtech given to us by our manager.
+It's meant to a be a quick practice project.
 
-## Available Scripts
+By: Bev, Bence, Jeric, Brook, and Leo
 
-In the project directory, you can run:
+## Requirements
 
-### `npm start`
+### Need to have
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. User can input numbers one digit at a time.
+1. User can input a negative for negative numbers.
+1. User can delete input digits.
+1. User can clear the expression.
+1. User can input decimal numbers.
+1. User can input operations to perform on the numbers.
+1. User can input brackets to change order of operations.
+1. User can carry out multiple operations in one expression.
+1. User can see the current state of the expression.
+1. User can cause the expression to be evaluated according to the rules of BIDMAS.
+1. User can evaluate the same expression multiple times without inputting it again.
+1. User recieves error messages when evaluating invalid expression (div by 0).
+1. User can only input a certain amount of digits per number (to clarify w/ Vic).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Nice to have
 
-### `npm test`
+1. User can open a menu for more complicated operations / scientific.
+1. User can input the expression directly using the keyboard.
+1. User can copy an expression and have it evaluate.
+1. User can see a history of evaluated expressions (saved in local storage).
+1. Test things
+1. User can select constants to include in the expression.
+1. The result of the previous expression is stored (maybe in ans variable, maybe implied)
+1. User can insert digits in the middle of numbers.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is React.js based, and includes TailwindCSS, however these are both downloaded during the installation below.
+`npm` is required for the installation procedure, and is acquired by downloading NodeJS from either the Software Center or the [NodeJS Website](https://nodejs.org).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Setting up
+1. Download the repository by executing `git clone git@github.com:LForchini/CalculatorPT.git`.
+   If that doesn't work, try downloading it using https with `git clone https://github.com/LForchini/CalculatorPT.git`.
+1. Move into the directory using `cd CalculatorPT`.
+1. Install project requirements using `npm i`.
+   This will automatically download all of the dependencies and devDependencies to compatible versions.
+   
+### Accessing the website
+* `npm start` will run a test development server which will run on `localhost:3000`. 
+   This should open automatically in your default browser.
+* `npm run build` will build an optimised production version of the website, which can be found in the generated `build` directory.
+* We also have a GitHub Page hosting this website which can be accessed [here](https://LForchini.github.io/CalculatorPT).
+   This is updated with every push to main.
