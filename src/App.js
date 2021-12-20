@@ -8,6 +8,7 @@ function App() {
   const [ expr, setExpr ] = useState("0");
   const [clearNext, setClearNext] = useState(true);
   const [history, setHistory] = useState(JSON.parse(localStorage.getItem('history')) || []);
+  const [ans, setAns] = useState(0);
 
   useEffect(() => {
     console.log(expr);
@@ -28,7 +29,6 @@ function App() {
             <InputButtons onClick={() => {setExpr(expr + "("); setClearNext(false);}} label="(" />
             <InputButtons onClick={() => {setExpr(expr + ")"); setClearNext(false);}} label=")" />
             
-
             <InputButtons onClick={() => {setExpr((clearNext ? "":expr) + "7"); setClearNext(false);}} label="7" />
             <InputButtons onClick={() => {setExpr((clearNext ? "":expr) + "8"); setClearNext(false);}} label="8" />
             <InputButtons onClick={() => {setExpr((clearNext ? "":expr) + "9"); setClearNext(false);}} label="9" />
@@ -46,7 +46,7 @@ function App() {
 
             <InputButtons onClick={() => {setExpr((clearNext ? "":expr) + "."); setClearNext(false);}} label="." />
             <InputButtons onClick={() => {setExpr((clearNext ? "":expr) + "0"); setClearNext(false);}} label="0" />
-            <InputButtons onClick={() => {Evaluate(expr, setExpr, setHistory); setClearNext(true);}} label="=" />
+            <InputButtons onClick={() => {Evaluate(expr, setExpr, setHistory, ans, setAns); setClearNext(true);}} label="=" />
             <InputButtons onClick={() => {setExpr(expr + "/"); setClearNext(false);}} label="÷" />
           </div>
         </div>
