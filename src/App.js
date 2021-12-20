@@ -42,11 +42,11 @@ function App() {
                   ? "0"
                   : expr.substring(0, expr.length - 1);
 
-                if (nextExpr === "") {
-                  setExpr("0");
+                setExpr(nextExpr);
+
+                if (nextExpr === "0") {
                   setClearNext(true);
                 } else {
-                  setExpr(nextExpr);
                   setClearNext(false);
                 }
               }}
