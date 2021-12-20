@@ -34,11 +34,13 @@ By: Bev, Bence, Jeric, Brook, and Leo
 1. The result of the previous expression is stored (maybe in ans variable, maybe implied)
 1. User can insert digits in the middle of numbers.
 
-### User Stories
+### Tasks
 
 User want to action because reason
 
-1.
+1. Create outline of calculator with buttons and text input field
+1. Implement button press logic
+1. Expression evaluation function
 
 ## Installation
 
