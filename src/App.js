@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import InputButtons from './components/InputButtons';
 import Evaluate from './components/evaluation';
 import Title from "./components/Title";
+import History from './components/History'
 
 function App() {
-  const [ expr, setExpr ] = useState("0")
+  const [ expr, setExpr ] = useState("0");
   const [clearNext, setClearNext] = useState(true);
+  const [history, setHistory] = useState(JSON.parse(localStorage.getItem('history')) || []);
 
   useEffect(() => {
     console.log(expr);
@@ -17,7 +19,7 @@ function App() {
       <Title />
       <div className="grid justify-center w-auto auto-cols-min grid-flow-col">
         {/* Calculator */}
-        <div className="font-bold text-2xl font-mono border-solid border-2 border-black w-[325px] rounded-2xl p-2 bg-gradient-to-t from-indigo-500 ml-auto mr-auto">
+        <div className="mr-auto font-bold text-2xl font-mono bg-gradient-to-t from-indigo-500 ml-auto border-solid border-2 border-black lg:h-min 2xl:h-min w-[325px] rounded-2xl p-2">
           <input className="border-solid border-2 border-black text-right w-full h-14" type="text" value={expr} onChange={(e) => {setExpr(e.target.value);}} />
           {/* Buttons */}
           <div className="grid justify-center items-center grid-cols-4 w-auto ">
@@ -44,20 +46,11 @@ function App() {
 
             <InputButtons onClick={() => {setExpr((clearNext ? "":expr) + "."); setClearNext(false);}} label="." />
             <InputButtons onClick={() => {setExpr((clearNext ? "":expr) + "0"); setClearNext(false);}} label="0" />
-            <InputButtons onClick={() => {Evaluate(expr, setExpr); setClearNext(true);}} label="=" />
+            <InputButtons onClick={() => {Evaluate(expr, setExpr, setHistory); setClearNext(true);}} label="=" />
             <InputButtons onClick={() => {setExpr(expr + "/"); setClearNext(false);}} label="÷" />
           </div>
         </div>
-        <div className="ml-5">
-          <h2 className="font-bold text-2xl">History</h2>
-          <ul className='list-disc'>
-          {
-            (JSON.parse(localStorage.getItem('history')) || []).map((item) => (<li key={item.id}> 
-              <p className="cursor-pointer underline text-blue-500" onClick={() => {setExpr(item.text); setClearNext(true)}}>{item.text}</p> 
-            </li>))
-          }
-          </ul>
-        </div>
+        <History history={history} setHistory={setHistory} setExpr={setExpr} setClearNext={setClearNext}/>
       </div>
     </>
   );
