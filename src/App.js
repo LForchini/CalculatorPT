@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import InputButtons from "./components/InputButtons";
 import Evaluate from "./components/evaluation";
 import Title from "./components/Title";
@@ -31,15 +31,24 @@ function App() {
             <InputButtons
               className="bg-green-500"
               onClick={() => {
-                setExpr("");
-                setClearNext(false);
+                setExpr("0");
+                setClearNext(true);
               }}
               label="Clr"
             />
             <InputButtons
               onClick={() => {
-                setExpr(clearNext ? "" : expr.substring(0, expr.length - 1));
-                setClearNext(false);
+                let nextExpr = clearNext
+                  ? "0"
+                  : expr.substring(0, expr.length - 1);
+
+                if (nextExpr === "") {
+                  setExpr("0");
+                  setClearNext(true);
+                } else {
+                  setExpr(nextExpr);
+                  setClearNext(false);
+                }
               }}
               label="Del"
             />
