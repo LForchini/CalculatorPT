@@ -6,10 +6,10 @@ import { evaluate } from "mathjs";
  * @param {*} setExpr
 
  */
-export default function Evaluate(expr, setExpr, setHistory) {
+export default function Evaluate(expr, setExpr, setHistory, ans, setAns) {
   let output;
   try {
-    output = evaluate(expr).toString();
+    output = evaluate(expr, {Ans: ans});
     let history = JSON.parse(localStorage.getItem('history')) || [];
     let nextId = 0;
     if (history.length > 0) nextId = history.reduce((max, item) => (item.id > max ? item.id : max)) + 1;
@@ -20,6 +20,8 @@ export default function Evaluate(expr, setExpr, setHistory) {
     history.push({text: expr, id: nextId});
     setHistory(history);
     localStorage.setItem('history', JSON.stringify(history));
+    setAns(output);
+    output = output.toString();
   } catch (error) {
     output = "Error"
     console.log(error)
