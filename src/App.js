@@ -12,10 +12,6 @@ function App() {
   );
   const [ans, setAns] = useState(0);
 
-  useEffect(() => {
-    console.log(expr);
-  });
-
   return (
     <>
       <Title />
