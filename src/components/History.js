@@ -8,6 +8,7 @@ export default function History({
     <div className="ml-5">
       <h2 className="font-bold text-2xl">History</h2>
       <button
+        className="border-2 border-black p-1 rounded-xl pt-0 pb-0 hover:bg-blue-300"
         onClick={() => {
           localStorage.clear();
           setHistory([]);
