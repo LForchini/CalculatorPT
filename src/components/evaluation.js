@@ -6,9 +6,8 @@ import { evaluate } from "mathjs";
  * @param {*} setExpr
 
  */
-function Evaluate(expr, setExpr) {
+export default function Evaluate(expr, setExpr, setClearNext) {
   let output = evaluate(expr).toString();
+  setClearNext(true);
   setExpr(output);
 }
-
-module.exports = Evaluate;
