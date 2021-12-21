@@ -28,6 +28,9 @@ function App() {
             onFocus={() => {
               if (expr === "0") setExpr("");
             }}
+            onBlur={() => {
+              if (expr === "") setExpr("0");
+            }}
           />
           {/* Buttons */}
           <div className="grid justify-center items-center grid-cols-4 w-auto ">
