@@ -17,9 +17,9 @@ function App() {
       <Title />
       <div className="grid justify-center w-auto auto-cols-min grid-flow-col">
         {/* Calculator */}
-        <div className="mr-auto font-bold text-2xl font-mono bg-gradient-to-t from-indigo-500 ml-auto border-solid border-2 border-black lg:h-min 2xl:h-min w-[325px] rounded-2xl p-2">
+        <div className="font-bold text-2xl font-mono h-min w-[325px] rounded-2xl">
           <input
-            className="border-solid border-2 border-black text-right w-full h-14"
+            className="border-solid border-2 border-black/30 bg-black/25 text-right w-full h-14 rounded-t-2xl outline-none"
             type="text"
             value={expr}
             onChange={(e) => {
@@ -154,6 +154,7 @@ function App() {
             />
 
             <InputButtons
+              className="rounded-bl-2xl"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + ".");
                 setClearNext(false);
@@ -176,6 +177,7 @@ function App() {
               label="="
             />
             <InputButtons
+              className="rounded-br-2xl"
               onClick={() => {
                 setExpr(expr + "/");
                 setClearNext(false);
