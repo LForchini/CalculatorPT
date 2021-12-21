@@ -19,11 +19,11 @@ export default function History({
       <ul className="list-none">
         {history.map((item) => {
           let t = item.text;
-          if (t.length > 12) t = `${t.substring(0, 9)}...`;
+          if (t.length > 15) t = `${t.substring(0, 15 - 3)}...`;
           return (
             <li key={item.id}>
               <p
-                className="cursor-pointer underline text-blue-500"
+                className="cursor-pointer underline text-blue-500 font-mono"
                 onClick={() => {
                   setExpr(item.text);
                   setClearNext(true);
