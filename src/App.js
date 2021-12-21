@@ -5,12 +5,16 @@ import Title from "./components/Title";
 import History from "./components/History";
 
 function App() {
-  const [expr, setExpr] = useState("0");
+  const [expr, setExprBase] = useState("0");
   const [clearNext, setClearNext] = useState(true);
   const [history, setHistory] = useState(
     JSON.parse(localStorage.getItem("history")) || []
   );
   const [ans, setAns] = useState(0);
+
+  function setExpr(expr) {
+    if (expr.length < 25) setExprBase(expr);
+  }
 
   return (
     <>
@@ -19,7 +23,11 @@ function App() {
         {/* Calculator */}
         <div className="font-bold text-2xl font-mono h-min w-[325px] rounded-2xl">
           <input
-            className="border-solid border-2 border-black/30 bg-black/25 text-right w-full h-14 rounded-t-2xl outline-none"
+            className={`border-solid border-2  ${
+              expr.length === 24
+                ? "border-red-500 bg-red-500/25"
+                : "border-black/30 bg-black/25"
+            } text-right w-full h-14 rounded-t-2xl outline-none`}
             type="text"
             value={expr}
             onChange={(e) => {
