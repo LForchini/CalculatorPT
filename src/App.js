@@ -29,7 +29,6 @@ function App() {
           {/* Buttons */}
           <div className="grid justify-center items-center grid-cols-4 w-auto ">
             <InputButtons
-              className="bg-green-500"
               onClick={() => {
                 setExpr("0");
                 setClearNext(true);
@@ -169,6 +168,7 @@ function App() {
               label="0"
             />
             <InputButtons
+              className="bg-green-500"
               onClick={() => {
                 Evaluate(expr, setExpr, setHistory, ans, setAns);
                 setClearNext(true);
