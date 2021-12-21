@@ -24,8 +24,10 @@ function App() {
         <div className="font-bold text-2xl font-mono h-min w-[325px] rounded-2xl">
           <input
             className={`border-solid border-2  ${
-              expr.length === 24 ? "border-red-500 bg-red-500/25" : "border-black/30"
-            } bg-black/25 text-right w-full h-14 rounded-t-2xl outline-none`}
+              expr.length === 24
+                ? "border-red-500 bg-red-500/25"
+                : "border-black/30 bg-black/25"
+            } text-right w-full h-14 rounded-t-2xl outline-none`}
             type="text"
             value={expr}
             onChange={(e) => {
