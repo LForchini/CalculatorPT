@@ -25,9 +25,7 @@ export default function Evaluate(
       let lowestId = history.reduce((min, item) =>
         item.id < min ? item.id : min
       ).id;
-      console.log(lowestId, nextId);
       history = history.filter((item) => item.id !== lowestId);
-      console.log("filtered id " + lowestId);
     }
     console.log(history.length);
     history.push({ text: expr, id: nextId });
