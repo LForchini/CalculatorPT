@@ -5,12 +5,16 @@ import Title from "./components/Title";
 import History from "./components/History";
 
 function App() {
-  const [expr, setExpr] = useState("0");
+  const [expr, setExprBase] = useState("0");
   const [clearNext, setClearNext] = useState(true);
   const [history, setHistory] = useState(
     JSON.parse(localStorage.getItem("history")) || []
   );
   const [ans, setAns] = useState(0);
+
+  function setExpr(expr) {
+    if (expr.length < 25) setExprBase(expr);
+  }
 
   return (
     <>
