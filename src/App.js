@@ -13,6 +13,7 @@ function App() {
   const [ans, setAns] = useState(0);
 
   function setExpr(expr) {
+    if ((expr.split(".").length - 1) > 1) return;
     if (expr.length < 25) setExprBase(expr);
   }
 
@@ -183,7 +184,6 @@ function App() {
               label="0"
             />
             <InputButtons
-              className="bg-green-500"
               onClick={() => {
                 Evaluate(expr, setExpr, setHistory, ans, setAns);
                 setClearNext(true);
