@@ -25,6 +25,9 @@ function App() {
             onChange={(e) => {
               setExpr(e.target.value);
             }}
+            onFocus={() => {
+              if (expr === "0") setExpr("");
+            }}
           />
           {/* Buttons */}
           <div className="grid justify-center items-center grid-cols-4 w-auto ">
