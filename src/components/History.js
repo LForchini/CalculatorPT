@@ -17,19 +17,23 @@ export default function History({
         Clear
       </button>
       <ul className="list-none">
-        {history.map((item) => (
-          <li key={item.id}>
-            <p
-              className="cursor-pointer underline text-blue-500"
-              onClick={() => {
-                setExpr(item.text);
-                setClearNext(true);
-              }}
-            >
-              {item.text}
-            </p>
-          </li>
-        ))}
+        {history.map((item) => {
+          let t = item.text;
+          if (t.length > 12) t = `${t.substring(0, 9)}...`;
+          return (
+            <li key={item.id}>
+              <p
+                className="cursor-pointer underline text-blue-500"
+                onClick={() => {
+                  setExpr(item.text);
+                  setClearNext(true);
+                }}
+              >
+                {t}
+              </p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
