@@ -59,14 +59,14 @@ function App() {
             />
             <InputButtons
               onClick={() => {
-                setExpr(expr + "(");
+                setExpr((clearNext ? "" : expr) + "(");
                 setClearNext(false);
               }}
               label="("
             />
             <InputButtons
               onClick={() => {
-                setExpr(expr + ")");
+                setExpr((clearNext ? "" : expr) + ")");
                 setClearNext(false);
               }}
               label=")"
