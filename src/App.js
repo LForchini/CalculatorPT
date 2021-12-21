@@ -25,6 +25,12 @@ function App() {
             onChange={(e) => {
               setExpr(e.target.value);
             }}
+            onFocus={() => {
+              if (expr === "0") setExpr("");
+            }}
+            onBlur={() => {
+              if (expr === "") setExpr("0");
+            }}
           />
           {/* Buttons */}
           <div className="grid justify-center items-center grid-cols-4 w-auto ">
@@ -53,14 +59,14 @@ function App() {
             />
             <InputButtons
               onClick={() => {
-                setExpr(expr + "(");
+                setExpr((clearNext ? "" : expr) + "(");
                 setClearNext(false);
               }}
               label="("
             />
             <InputButtons
               onClick={() => {
-                setExpr(expr + ")");
+                setExpr((clearNext ? "" : expr) + ")");
                 setClearNext(false);
               }}
               label=")"
