@@ -194,7 +194,7 @@ function App() {
             />
 
             <InputButtons
-              className="rounded-bl-2xl btn-."
+              className="rounded-bl-2xl btn-decimal"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + ".");
                 setClearNext(false);
