@@ -28,7 +28,6 @@ export default function Evaluate(
     output = output.toString();
   } catch (error) {
     output = "Error";
-    console.log(error);
   }
   setExpr(output);
 }
