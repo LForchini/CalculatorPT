@@ -12,7 +12,7 @@ function App() {
   );
   const [ans, setAns] = useState(0);
 
-  const MAX_DIGITS = 20;
+  const MAX_DIGITS = 24;
 
   function setExpr(expr) {
     if (expr.length > MAX_DIGITS) return;
@@ -30,10 +30,10 @@ function App() {
               expr.length === MAX_DIGITS ? "visible" : "hidden"
             }`}
           >
-            Maximum amount of digits reached
+            Maximum amount of input reached
           </p>
           <input
-            className={`border-solid border-2  ${
+            className={`text-input border-solid border-2  ${
               expr.length === MAX_DIGITS
                 ? "border-red-500 bg-red-500/25"
                 : "border-black/30 bg-black/25"
@@ -53,6 +53,7 @@ function App() {
           {/* Buttons */}
           <div className="grid justify-center items-center grid-cols-4 w-auto ">
             <InputButtons
+              className="btn-clr"
               onClick={() => {
                 setExpr("0");
                 setClearNext(true);
@@ -60,6 +61,7 @@ function App() {
               label="Clr"
             />
             <InputButtons
+              className="btn-del"
               onClick={() => {
                 let nextExpr = clearNext
                   ? "0"
@@ -76,6 +78,7 @@ function App() {
               label="Del"
             />
             <InputButtons
+              className="btn-o-bracket"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "(");
                 setClearNext(false);
@@ -83,6 +86,7 @@ function App() {
               label="("
             />
             <InputButtons
+              className="btn-c-bracket"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + ")");
                 setClearNext(false);
@@ -91,6 +95,7 @@ function App() {
             />
 
             <InputButtons
+              className="btn-7"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "7");
                 setClearNext(false);
@@ -98,6 +103,7 @@ function App() {
               label="7"
             />
             <InputButtons
+              className="btn-8"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "8");
                 setClearNext(false);
@@ -105,6 +111,7 @@ function App() {
               label="8"
             />
             <InputButtons
+              className="btn-9"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "9");
                 setClearNext(false);
@@ -112,6 +119,7 @@ function App() {
               label="9"
             />
             <InputButtons
+              className="btn-multiply"
               onClick={() => {
                 setExpr(expr + "*");
                 setClearNext(false);
@@ -120,6 +128,7 @@ function App() {
             />
 
             <InputButtons
+              className="btn-4"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "4");
                 setClearNext(false);
@@ -127,6 +136,7 @@ function App() {
               label="4"
             />
             <InputButtons
+              className="btn-5"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "5");
                 setClearNext(false);
@@ -134,6 +144,7 @@ function App() {
               label="5"
             />
             <InputButtons
+              className="btn-6"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "6");
                 setClearNext(false);
@@ -141,6 +152,7 @@ function App() {
               label="6"
             />
             <InputButtons
+              className="btn-minus"
               onClick={() => {
                 setExpr(expr + "-");
                 setClearNext(false);
@@ -149,6 +161,7 @@ function App() {
             />
 
             <InputButtons
+              className="btn-1"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "1");
                 setClearNext(false);
@@ -156,6 +169,7 @@ function App() {
               label="1"
             />
             <InputButtons
+              className="btn-2"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "2");
                 setClearNext(false);
@@ -163,6 +177,7 @@ function App() {
               label="2"
             />
             <InputButtons
+              className="btn-3"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "3");
                 setClearNext(false);
@@ -170,6 +185,7 @@ function App() {
               label="3"
             />
             <InputButtons
+              className="btn-plus"
               onClick={() => {
                 setExpr(expr + "+");
                 setClearNext(false);
@@ -178,7 +194,7 @@ function App() {
             />
 
             <InputButtons
-              className="rounded-bl-2xl"
+              className="rounded-bl-2xl btn-decimal"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + ".");
                 setClearNext(false);
@@ -186,6 +202,7 @@ function App() {
               label="."
             />
             <InputButtons
+              className="btn-0"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "0");
                 setClearNext(false);
@@ -193,6 +210,7 @@ function App() {
               label="0"
             />
             <InputButtons
+              className="bg-green-500 btn-equals"
               onClick={() => {
                 Evaluate(expr, setExpr, setHistory, ans, setAns);
                 setClearNext(true);
@@ -200,7 +218,7 @@ function App() {
               label="="
             />
             <InputButtons
-              className="rounded-br-2xl"
+              className="rounded-br-2xl btn-divide"
               onClick={() => {
                 setExpr(expr + "/");
                 setClearNext(false);
