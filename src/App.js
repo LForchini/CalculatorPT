@@ -30,7 +30,7 @@ function App() {
               expr.length === MAX_DIGITS ? "visible" : "hidden"
             }`}
           >
-            Maximum amount of input reached
+            Character limit reached
           </p>
           <input
             className={`text-input border-solid border-2  ${
@@ -210,10 +210,14 @@ function App() {
               label="0"
             />
             <InputButtons
-              className="bg-green-500 btn-equals"
+              className={`${
+                expr.length === MAX_DIGITS ? "bg-red-500" : "bg-green-500"
+              } btn-equals`}
               onClick={() => {
-                Evaluate(expr, setExpr, setHistory, ans, setAns);
-                setClearNext(true);
+                if (expr.length !== MAX_DIGITS) {
+                  Evaluate(expr, setExpr, setHistory, ans, setAns);
+                  setClearNext(true);
+                }
               }}
               label="="
             />
