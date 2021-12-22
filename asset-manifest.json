@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/CalculatorPT/static/css/main.22204f87.css",
-    "main.js": "/CalculatorPT/static/js/main.e0f4f275.js",
+    "main.css": "/CalculatorPT/static/css/main.8f46ac11.css",
+    "main.js": "/CalculatorPT/static/js/main.986375b3.js",
     "index.html": "/CalculatorPT/index.html",
-    "main.22204f87.css.map": "/CalculatorPT/static/css/main.22204f87.css.map",
-    "main.e0f4f275.js.map": "/CalculatorPT/static/js/main.e0f4f275.js.map"
+    "main.8f46ac11.css.map": "/CalculatorPT/static/css/main.8f46ac11.css.map",
+    "main.986375b3.js.map": "/CalculatorPT/static/js/main.986375b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.22204f87.css",
-    "static/js/main.e0f4f275.js"
+    "static/css/main.8f46ac11.css",
+    "static/js/main.986375b3.js"
   ]
 }
