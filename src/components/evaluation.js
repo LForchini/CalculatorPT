@@ -27,7 +27,6 @@ export default function Evaluate(
       ).id;
       history = history.filter((item) => item.id !== lowestId);
     }
-    console.log(history.length);
     history.push({ text: expr, id: nextId });
     setHistory(history);
     localStorage.setItem("history", JSON.stringify(history));

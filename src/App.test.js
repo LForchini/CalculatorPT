@@ -16,6 +16,13 @@ afterEach(() => {
   container = null;
 });
 
+function performOperations(operations) {
+  operations.forEach((label, i) => {
+    let button = container.querySelector(`.btn-${label}`);
+    button.dispatchEvent(new MouseEvent(`click`, { bubbles: true }));
+  });
+}
+
 test("calculator starts off at 0", () => {
   render(<App />, container);
 
@@ -43,13 +50,11 @@ test("all buttons can be pressed without errors", () => {
     "minus",
     "multiply",
     "divide",
+    "decimal",
     "equals",
   ];
 
-  char_buttons.forEach((label, i) => {
-    let button = container.querySelector(`.btn-${label}`);
-    button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-  });
+  performOperations(char_buttons);
 
   for (let i = 0; i < 10; i++) {
     let button = container.querySelector(`.btn-${i}`);
@@ -60,4 +65,47 @@ test("all buttons can be pressed without errors", () => {
   button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
 
   expect(container.querySelector(".text-input").value).toBe("0");
+});
+
+test("can perform basic calculations", () => {
+  render(<App />, container);
+
+  const operations = ["1", "plus", "2", "equals"];
+
+  performOperations(operations);
+
+  expect(container.querySelector(".text-input").value).toBe("3");
+});
+
+test("can perform complex calculations", () => {
+  render(<App />, container);
+
+  const operations = "o-bracket 1 plus 2 c-bracket multiply 3 equals".split(
+    " "
+  );
+
+  performOperations(operations);
+
+  expect(container.querySelector(".text-input").value).toBe("9");
+});
+
+test("can perform operations on decimal numbers", () => {
+  render(<App />, container);
+
+  const operations = "0 decimal 3 plus 0 decimal 7 equals".split(" ");
+
+  performOperations(operations);
+
+  expect(container.querySelector(".text-input").value).toBe("1");
+});
+
+test("input has a limited length", () => {
+  render(<App />, container);
+
+  for (let i = 0; i < 100; i++) {
+    const button = container.querySelector(".btn-0");
+    button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  }
+
+  expect(container.querySelector(".text-input").value.length).toBeLessThan(50);
 });
