@@ -250,8 +250,10 @@ function App() {
                 expr.length === MAX_DIGITS ? "bg-red-500" : "bg-green-500"
               } btn-equals`}
               onClick={() => {
-                Evaluate(expr, setExpr, setHistory, ans, setAns);
-                setClearNext(true);
+                if (expr.length !== MAX_DIGITS) {
+                  Evaluate(expr, setExpr, setHistory, ans, setAns);
+                  setClearNext(true);
+                }
               }}
               label="="
               expr={expr}
