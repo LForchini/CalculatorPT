@@ -15,7 +15,6 @@ function App() {
   const MAX_DIGITS = 24;
 
   function setExpr(expr) {
-    if (expr.split(".").length - 1 > 1) return;
     if (expr.length > MAX_DIGITS) return;
     setExprBase(expr);
   }
