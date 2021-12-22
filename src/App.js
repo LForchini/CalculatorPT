@@ -12,8 +12,11 @@ function App() {
   );
   const [ans, setAns] = useState(0);
 
+  const MAX_DIGITS = 20;
+
   function setExpr(expr) {
-    if (expr.length < 25) setExprBase(expr);
+    if (expr.length > MAX_DIGITS) return;
+    setExprBase(expr);
   }
 
   return (
@@ -22,9 +25,16 @@ function App() {
       <div className="grid justify-center w-auto auto-cols-min grid-flow-col">
         {/* Calculator */}
         <div className="font-bold text-2xl font-mono h-min w-[325px] rounded-2xl">
+          <p
+            className={`text-sm text-red-500 text-center ${
+              expr.length === MAX_DIGITS ? "visible" : "hidden"
+            }`}
+          >
+            Maximum amount of digits reached
+          </p>
           <input
             className={`border-solid border-2  ${
-              expr.length === 24
+              expr.length === MAX_DIGITS
                 ? "border-red-500 bg-red-500/25"
                 : "border-black/30 bg-black/25"
             } text-right w-full h-14 rounded-t-2xl outline-none`}
@@ -183,7 +193,6 @@ function App() {
               label="0"
             />
             <InputButtons
-              className="bg-green-500"
               onClick={() => {
                 Evaluate(expr, setExpr, setHistory, ans, setAns);
                 setClearNext(true);
