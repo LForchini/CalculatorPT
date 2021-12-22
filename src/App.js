@@ -12,7 +12,7 @@ function App() {
   );
   const [ans, setAns] = useState(0);
 
-  const MAX_DIGITS = 24;
+  const MAX_DIGITS = 16;
 
   function setExpr(expr) {
     if (expr.length > MAX_DIGITS) return;
@@ -214,10 +214,8 @@ function App() {
                 expr.length === MAX_DIGITS ? "bg-red-500" : "bg-green-500"
               } btn-equals`}
               onClick={() => {
-                if (expr.length !== MAX_DIGITS) {
-                  Evaluate(expr, setExpr, setHistory, ans, setAns);
-                  setClearNext(true);
-                }
+                Evaluate(expr, setExpr, setHistory, ans, setAns);
+                setClearNext(true);
               }}
               label="="
             />
