@@ -59,6 +59,8 @@ function App() {
                 setClearNext(true);
               }}
               label="Clr"
+              expr={expr}
+              max_digits={MAX_DIGITS + 1}
             />
             <InputButtons
               className="btn-del"
@@ -76,6 +78,8 @@ function App() {
                 }
               }}
               label="Del"
+              expr={expr}
+              max_digits={MAX_DIGITS + 1}
             />
             <InputButtons
               className="btn-o-bracket"
@@ -84,6 +88,8 @@ function App() {
                 setClearNext(false);
               }}
               label="("
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-c-bracket"
@@ -92,6 +98,8 @@ function App() {
                 setClearNext(false);
               }}
               label=")"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
 
             <InputButtons
@@ -101,6 +109,8 @@ function App() {
                 setClearNext(false);
               }}
               label="7"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-8"
@@ -109,6 +119,8 @@ function App() {
                 setClearNext(false);
               }}
               label="8"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-9"
@@ -117,6 +129,8 @@ function App() {
                 setClearNext(false);
               }}
               label="9"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-multiply"
@@ -125,6 +139,8 @@ function App() {
                 setClearNext(false);
               }}
               label="*"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
 
             <InputButtons
@@ -134,6 +150,8 @@ function App() {
                 setClearNext(false);
               }}
               label="4"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-5"
@@ -142,6 +160,8 @@ function App() {
                 setClearNext(false);
               }}
               label="5"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-6"
@@ -150,6 +170,8 @@ function App() {
                 setClearNext(false);
               }}
               label="6"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-minus"
@@ -158,6 +180,8 @@ function App() {
                 setClearNext(false);
               }}
               label="-"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
 
             <InputButtons
@@ -167,6 +191,8 @@ function App() {
                 setClearNext(false);
               }}
               label="1"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-2"
@@ -175,6 +201,8 @@ function App() {
                 setClearNext(false);
               }}
               label="2"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-3"
@@ -183,6 +211,8 @@ function App() {
                 setClearNext(false);
               }}
               label="3"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-plus"
@@ -191,6 +221,8 @@ function App() {
                 setClearNext(false);
               }}
               label="+"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
 
             <InputButtons
@@ -200,6 +232,8 @@ function App() {
                 setClearNext(false);
               }}
               label="."
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="btn-0"
@@ -208,6 +242,8 @@ function App() {
                 setClearNext(false);
               }}
               label="0"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className={`${
@@ -218,6 +254,8 @@ function App() {
                 setClearNext(true);
               }}
               label="="
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
             <InputButtons
               className="rounded-br-2xl btn-divide"
@@ -226,6 +264,8 @@ function App() {
                 setClearNext(false);
               }}
               label="÷"
+              expr={expr}
+              max_digits={MAX_DIGITS}
             />
           </div>
         </div>
