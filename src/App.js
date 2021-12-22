@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Howl } from "howler";
 import InputButtons from "./components/InputButtons";
 import Evaluate from "./components/evaluation";
 import Title from "./components/Title";
 import History from "./components/History";
+import { fractionDependencies } from "mathjs";
 
 function App() {
   const [expr, setExprBase] = useState("0");
@@ -14,8 +16,19 @@ function App() {
 
   const MAX_DIGITS = Number.MAX_SAFE_INTEGER.toString().length;
 
+  function playErrorAudio() {
+    var sound = new Howl({
+      src: ["https://soundbible.com/mp3/Computer%20Error%20Alert-SoundBible.com-783113881.mp3"],
+      html5: true
+    });
+    sound.play();
+  }
+
   function setExpr(expr) {
-    if (expr.length > MAX_DIGITS) return;
+    if (expr.length > MAX_DIGITS) {
+      playErrorAudio();
+      return;
+    }
     setExprBase(expr);
   }
 
@@ -253,7 +266,7 @@ function App() {
                 if (expr.length !== MAX_DIGITS) {
                   Evaluate(expr, setExpr, setHistory, ans, setAns);
                   setClearNext(true);
-                }
+                } else playErrorAudio();
               }}
               label="="
               expr={expr}
