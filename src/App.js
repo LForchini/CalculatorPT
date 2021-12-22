@@ -12,7 +12,7 @@ function App() {
   );
   const [ans, setAns] = useState(0);
 
-  const MAX_DIGITS = 16;
+  const MAX_DIGITS = Number.MAX_SAFE_INTEGER.toString().length;
 
   function setExpr(expr) {
     if (expr.length > MAX_DIGITS) return;
