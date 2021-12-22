@@ -30,7 +30,7 @@ function App() {
               expr.length === MAX_DIGITS ? "visible" : "hidden"
             }`}
           >
-            Maximum amount of input reached
+            Maximum amount of characters reached
           </p>
           <input
             className={`text-input border-solid border-2  ${
