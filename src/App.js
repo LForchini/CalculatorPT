@@ -68,7 +68,7 @@ function App() {
               label="Del"
             />
             <InputButtons
-              className="btn-("
+              className="btn-o-bracket"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + "(");
                 setClearNext(false);
@@ -76,7 +76,7 @@ function App() {
               label="("
             />
             <InputButtons
-              className="btn-)"
+              className="btn-c-bracket"
               onClick={() => {
                 setExpr((clearNext ? "" : expr) + ")");
                 setClearNext(false);
@@ -109,7 +109,7 @@ function App() {
               label="9"
             />
             <InputButtons
-              className="btn-*"
+              className="btn-multiply"
               onClick={() => {
                 setExpr(expr + "*");
                 setClearNext(false);
@@ -142,7 +142,7 @@ function App() {
               label="6"
             />
             <InputButtons
-              className="btn--"
+              className="btn-minus"
               onClick={() => {
                 setExpr(expr + "-");
                 setClearNext(false);
@@ -175,7 +175,7 @@ function App() {
               label="3"
             />
             <InputButtons
-              className="btn-+"
+              className="btn-plus"
               onClick={() => {
                 setExpr(expr + "+");
                 setClearNext(false);
@@ -200,7 +200,7 @@ function App() {
               label="0"
             />
             <InputButtons
-              className="bg-green-500 btn-="
+              className="bg-green-500 btn-equals"
               onClick={() => {
                 Evaluate(expr, setExpr, setHistory, ans, setAns);
                 setClearNext(true);
@@ -208,7 +208,7 @@ function App() {
               label="="
             />
             <InputButtons
-              className="rounded-br-2xl btn-/"
+              className="rounded-br-2xl btn-divide"
               onClick={() => {
                 setExpr(expr + "/");
                 setClearNext(false);
