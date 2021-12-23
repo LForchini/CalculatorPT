@@ -1,3 +1,5 @@
+/* global BigInt */
+
 class BigNumD {
   constructor(v, normalised = false) {
     this.toString = () => {
@@ -190,7 +192,7 @@ function compile(n) {
   let instructions = [];
   while (queue.length > 0) {
     let current = queue.pop();
-    if (current.args.length == current.index) {
+    if (current.args.length === current.index) {
       current.index = 0;
       instructions.push(current.instruction);
     } else {
