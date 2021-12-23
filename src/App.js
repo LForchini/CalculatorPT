@@ -55,7 +55,7 @@ function App() {
         {toggle ? <span>{<Help />}</span> : <span></span>}
       </div>
 
-      <div className="grid justify-center w-auto auto-cols-min grid-flow-col">
+      <div className="grid justify-center w-auto auto-cols-min grid-flow-col absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]">
         {/* Calculator */}
         <div className="font-bold text-2xl font-mono h-min w-[325px] rounded-2xl">
           <p
