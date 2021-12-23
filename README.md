@@ -56,6 +56,9 @@ This project is React.js based, and includes TailwindCSS, however these are both
 1. Move into the directory using `cd CalculatorPT`.
 1. Install project requirements using `npm i`.
    This will automatically download all of the dependencies and devDependencies to compatible versions.
+1. Install `npm i howler` and `npm i antd` in order to access the sound and toggle features.
+
+   
 
 ### Accessing the website
 

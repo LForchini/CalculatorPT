@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { Howl } from "howler";
 import InputButtons from "./components/InputButtons";
 import Evaluate from "./components/evaluation";
 import Title from "./components/Title";
 import History from "./components/History";
+import { fractionDependencies } from "mathjs";
+import { Switch } from "antd";
+import "antd/dist/antd.css";
+import Help from "./components/Help";
 
 function App() {
   const [expr, setExprBase] = useState("0");
@@ -11,17 +16,45 @@ function App() {
     JSON.parse(localStorage.getItem("history")) || []
   );
   const [ans, setAns] = useState(0);
+  const [toggle, setToggle] = useState(false);
 
   const MAX_DIGITS = Number.MAX_SAFE_INTEGER.toString().length;
 
+  function playErrorAudio() {
+    var sound = new Howl({
+      src: [
+        "https://soundbible.com/mp3/Computer%20Error%20Alert-SoundBible.com-783113881.mp3",
+      ],
+      html5: true,
+    });
+    sound.play();
+  }
+
   function setExpr(expr) {
-    if (expr.length > MAX_DIGITS) return;
+    if (expr.length > MAX_DIGITS) {
+      playErrorAudio();
+      return;
+    }
     setExprBase(expr);
   }
+
+  const helpToggle = () => {
+    toggle ? setToggle(false) : setToggle(true);
+  };
 
   return (
     <>
       <Title />
+      <div>
+        {/* Toggle */}
+        <Switch
+          checkedChildren="Help On"
+          unCheckedChildren="Help Off"
+          onClick={helpToggle}
+        />
+        {toggle ? <span>{<Help />}</span> : <span></span>}
+      </div>
+
       <div className="grid justify-center w-auto auto-cols-min grid-flow-col">
         {/* Calculator */}
         <div className="font-bold text-2xl font-mono h-min w-[325px] rounded-2xl">
@@ -253,7 +286,7 @@ function App() {
                 if (expr.length !== MAX_DIGITS) {
                   Evaluate(expr, setExpr, setHistory, ans, setAns);
                   setClearNext(true);
-                }
+                } else playErrorAudio();
               }}
               label="="
               expr={expr}
