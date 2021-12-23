@@ -84,30 +84,6 @@ test("Decimal numbers", () => {
   expect(s).toBe("19.2");
 });
 
-test("Infinity", () => {
-  let s = "1 / 0";
-  Evaluate(
-    s,
-    (o) => {
-      s = o;
-    },
-    (o) => {}
-  );
-  expect(s).toBe("Infinity");
-});
-
-test("Negative Infinity", () => {
-  let s = "-1/0";
-  Evaluate(
-    s,
-    (o) => {
-      s = o;
-    },
-    (o) => {}
-  );
-  expect(s).toBe("-Infinity");
-});
-
 test("Negative Expressions", () => {
   let s = "5-15";
   Evaluate(
@@ -118,29 +94,5 @@ test("Negative Expressions", () => {
     (o) => {}
   );
   expect(s).toBe("-10");
-});
-
-test("Invalid Expression", () => {
-  let s = "+/*";
-  Evaluate(
-    s,
-    (o) => {
-      s = o;
-    },
-    (o) => {}
-  );
-  expect(s).toBe("Error");
-});
-
-test("Overflow", () => {
-  let s = `${Number.MAX_VALUE} * 2`;
-  Evaluate(
-    s,
-    (o) => {
-      s = o;
-    },
-    (o) => {}
-  );
-  expect(s).toBe("Infinity");
 });
 //add more test cases such as e^2 if we get to it :)

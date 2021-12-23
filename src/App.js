@@ -12,9 +12,8 @@ function App() {
   const [history, setHistory] = useState(
     JSON.parse(localStorage.getItem("history")) || []
   );
-  const [ans, setAns] = useState(0);
 
-  const MAX_DIGITS = Number.MAX_SAFE_INTEGER.toString().length;
+  const MAX_DIGITS = 24;
 
   function playErrorAudio() {
     var sound = new Howl({
@@ -264,7 +263,7 @@ function App() {
               } btn-equals`}
               onClick={() => {
                 if (expr.length !== MAX_DIGITS) {
-                  Evaluate(expr, setExpr, setHistory, ans, setAns);
+                  Evaluate(expr, setExpr, setHistory);
                   setClearNext(true);
                 } else playErrorAudio();
               }}
