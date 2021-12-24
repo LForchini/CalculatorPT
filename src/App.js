@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <Title />
-      <div>
+      <div className="w-max">
         {/* Toggle */}
         <Switch
           checkedChildren="Help On"
@@ -55,9 +55,9 @@ function App() {
         {toggle ? <span>{<Help />}</span> : <span></span>}
       </div>
 
-      <div className="grid justify-center w-auto auto-cols-min grid-flow-col absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]">
+      <div className="grid justify-center w-max auto-cols-min grid-flow-col relative top-72 2xl:absolute 2xl:top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]">
         {/* Calculator */}
-        <div className="font-bold text-2xl font-mono h-min w-[325px] rounded-2xl">
+        <div className="font-bold text-2xl font-mono h-auto w-[18rem] rounded-2xl">
           <p
             className={`text-sm text-red-500 text-center ${
               expr.length === MAX_DIGITS ? "visible" : "hidden"
