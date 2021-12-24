@@ -4,20 +4,27 @@ object-assign
 @license MIT
 */
 
-/**
- * @license Complex.js v2.0.15 12/05/2020
+/*!
+ *  Spatial Plugin - Adds support for stereo and 3D audio where Web Audio is supported.
+ *  
+ *  howler.js v2.2.3
+ *  howlerjs.com
  *
- * Copyright (c) 2020, Robert Eisele (robert@xarg.org)
- * Dual licensed under the MIT or GPL Version 2 licenses.
- **/
+ *  (c) 2013-2020, James Simpson of GoldFire Studios
+ *  goldfirestudios.com
+ *
+ *  MIT License
+ */
 
-/**
- * @license Fraction.js v4.1.2 23/05/2021
- * https://www.xarg.org/2014/03/rational-numbers-in-javascript/
+/*!
+ *  howler.js v2.2.3
+ *  howlerjs.com
  *
- * Copyright (c) 2021, Robert Eisele (robert@xarg.org)
- * Dual licensed under the MIT or GPL Version 2 licenses.
- **/
+ *  (c) 2013-2020, James Simpson of GoldFire Studios
+ *  goldfirestudios.com
+ *
+ *  MIT License
+ */
 
 /** @license React v0.20.2
  * scheduler.production.min.js
