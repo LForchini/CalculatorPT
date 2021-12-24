@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Howl } from "howler";
 import InputButtons from "./components/InputButtons";
 import Evaluate from "./components/evaluation";
 import Title from "./components/Title";
 import History from "./components/History";
+import { fractionDependencies } from "mathjs";
 
 function App() {
   const [expr, setExprBase] = useState("0");
@@ -10,12 +12,22 @@ function App() {
   const [history, setHistory] = useState(
     JSON.parse(localStorage.getItem("history")) || []
   );
-  const [ans, setAns] = useState(0);
 
-  const MAX_DIGITS = Number.MAX_SAFE_INTEGER.toString().length;
+  const MAX_DIGITS = 24;
+
+  function playErrorAudio() {
+    var sound = new Howl({
+      src: ["https://soundbible.com/mp3/Computer%20Error%20Alert-SoundBible.com-783113881.mp3"],
+      html5: true
+    });
+    sound.play();
+  }
 
   function setExpr(expr) {
-    if (expr.length > MAX_DIGITS) return;
+    if (expr.length > MAX_DIGITS) {
+      playErrorAudio();
+      return;
+    }
     setExprBase(expr);
   }
 
@@ -251,9 +263,9 @@ function App() {
               } btn-equals`}
               onClick={() => {
                 if (expr.length !== MAX_DIGITS) {
-                  Evaluate(expr, setExpr, setHistory, ans, setAns);
+                  Evaluate(expr, setExpr, setHistory);
                   setClearNext(true);
-                }
+                } else playErrorAudio();
               }}
               label="="
               expr={expr}
