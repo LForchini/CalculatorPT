@@ -1,6 +1,7 @@
 /* global BigInt */
 
 class BigNumD {
+  static p = 15n;
   constructor(v, normalised = false) {
     this.toString = () => {
       let value = this.v.toString().split("");
@@ -30,7 +31,6 @@ class BigNumD {
     this.v = v * factor;
   }
 }
-BigNumD.p = 15n;
 class EvalNode {
   constructor() {
     this.args = [];
