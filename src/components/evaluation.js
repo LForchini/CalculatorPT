@@ -27,7 +27,11 @@ class BigNumD {
       return new BigNumD((this.v * 10n ** BigNumD.p) / other.v, true);
     };
     let factor = 1n;
-    if (!normalised) factor = BigInt(BigInt(10n) ** BigInt(BigNumD.p));
+    if (!normalised) {
+      for (let i = 0n; i < BigNumD.p; i++) {
+        factor = factor * 10n; 
+      }
+    }
     this.v = v * factor;
   }
 }
