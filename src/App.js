@@ -4,7 +4,6 @@ import InputButtons from "./components/InputButtons";
 import Evaluate from "./components/evaluation";
 import Title from "./components/Title";
 import History from "./components/History";
-import { fractionDependencies } from "mathjs";
 
 function App() {
   const [expr, setExprBase] = useState("0");
@@ -17,8 +16,10 @@ function App() {
 
   function playErrorAudio() {
     var sound = new Howl({
-      src: ["https://soundbible.com/mp3/Computer%20Error%20Alert-SoundBible.com-783113881.mp3"],
-      html5: true
+      src: [
+        "https://soundbible.com/mp3/Computer%20Error%20Alert-SoundBible.com-783113881.mp3",
+      ],
+      html5: true,
     });
     sound.play();
   }
