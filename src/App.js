@@ -4,7 +4,6 @@ import InputButtons from "./components/InputButtons";
 import Evaluate from "./components/evaluation";
 import Title from "./components/Title";
 import History from "./components/History";
-import { fractionDependencies } from "mathjs";
 
 function App() {
   const [expr, setExprBase] = useState("0");
