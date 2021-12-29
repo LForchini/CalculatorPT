@@ -27,6 +27,7 @@ function App() {
   function setExpr(expr) {
     if (expr.length > MAX_DIGITS) {
       playErrorAudio();
+      alert("Maximum character limit reached. Please remove characters or clear the input.");
       return;
     }
     setExprBase(expr);
